@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Recent Blog Posts</title>
+  <id>http://blog.olebedev.ru/feed.atom</id>
+  <updated>2011-10-09T00:00:00Z</updated>
+  <link href="http://blog.olebedev.ru/" />
+  <link href="http://blog.olebedev.ru/feed.atom" rel="self" />
+  <subtitle type="text">Recent blog posts</subtitle>
+  <generator>Werkzeug</generator>
+  <entry xml:base="http://blog.olebedev.ru/feed.atom">
+    <title type="text">Генератор статического блога</title>
+    <id>http://blog.olebedev.ru/2011/10/9/hello-rst-world</id>
+    <updated>2011-10-09T00:00:00Z</updated>
+    <link href="http://blog.olebedev.ru/2011/10/9/hello-rst-world" />
+    <author>
+      <name>Oleg Lebedev</name>
+    </author>
+    <content type="html">&lt;p&gt;Это первая заметка в блоге. В ней я хочу поделиться опытом о том как можно генерировать полноценный блог из файлов &lt;tt class="docutils literal"&gt;*.rst&lt;/tt&gt; с соответствующей разметкой.&lt;/p&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;Введение&lt;/h2&gt;
+&lt;p&gt;Недавно возникла необходимость создать блог. Использовать какую то блог-платформу я не хотел, потому как не хотел зависеть от кого бы то нибыло. К счастью сегодня есть такой инструмент как &lt;a class="reference external" href="http://disqus.com/"&gt;DISQUS&lt;/a&gt;, который даже stand-alone блоги делает социальными. Писать в тематические колонки тоже не возникло желания, так как я планирую писать на разные темы. Поэтому передо мной встал выбор на чем сделать блог.&lt;/p&gt;
+&lt;p&gt;Так как я большой любитель &lt;a class="reference external" href="http://flask.pocoo.org"&gt;Flask&lt;/a&gt;, я подумывал использовать его в качестве основы. Но есть проблемка - времени как всегда не много. А в случае с &lt;a class="reference external" href="http://flask.pocoo.org"&gt;Flask&lt;/a&gt; оно бы потребовалось, хотя бы на написаниние админстраторской части. Писать &amp;quot;админку&amp;quot; конкретно под эту задачу стало лень, писать автогенерируемую долго. Еще было бы здорово иметь такой блог, который не требователен к ресурсам. Так как сегодня нормальный shared-хостинг под Python еще не тоже самое что под PHP. А заводить &lt;cite&gt;VPS/VDS&lt;/cite&gt; сервер как то расточительно. Здесь я и подумал о том чтоб использовать &lt;cite&gt;генератор статических сайтов&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;Бонусом будет возможность разместить блог на {{ &lt;tt class="docutils literal"&gt;username&lt;/tt&gt; }}.github.com.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;Поиск&lt;/h2&gt;
+&lt;p&gt;Так как я использую в работе Python, я искал в этом направлении.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/SimonSapin/Frozen-Flask"&gt;Frozen-Flask&lt;/a&gt; сразу неподошел, потому как этот пакет генерирует &amp;quot;замороженную&amp;quot; версию ресурса из существуюшиего динамического.&lt;/p&gt;
+&lt;p&gt;Певрым я рассмотрел &lt;a class="reference external" href="http://docs.notmyidea.org/alexis/pelican/"&gt;pelican&lt;/a&gt;. У проекта есть &lt;a class="reference external" href="http://readthedocs.org/docs/pelican/en/2.7.2/"&gt;документация&lt;/a&gt;. Его возможности:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;возможность использования &lt;a class="reference external" href="http://disqus.com/"&gt;DISQUS&lt;/a&gt; для комментариев&lt;/li&gt;
+&lt;li&gt;поддержка тем(сделанных на шаблонизаторе &lt;a class="reference external" href="http://jinja.pocoo.org/"&gt;Jinja2&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;генератор PDF(опционально)&lt;/li&gt;
+&lt;li&gt;тэги&lt;/li&gt;
+&lt;li&gt;подсветка кода на основе &lt;a class="reference external" href="http://pygments.org/"&gt;pygments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Немного опробовал его. Вроде все хорошо. Немного начало смущать то, что библиотека поддерживает темы и излишне(IMHO) усложнена, потому как это странно для подобной задачи. Это ведь не &lt;cite&gt;CMS&lt;/cite&gt;. Этот инструмент для людей, как минимум понимающих то, что именно они делают. И каков будет результат. Конечно же нельзя было остановиться на первом варианте, не проверив еще несколько.
+Иду дальше.&lt;/p&gt;
+&lt;p&gt;Следующим я рассмотрел &lt;a class="reference external" href="http://www.blogofile.com/"&gt;blogofile&lt;/a&gt;. Довольно большая библиотека. Все таки люди, ищущие подобный инструмент стремятся к простоте использование и очевидности выгоды от этого. В данном случае простоты нет. Но  тогда может быть возможностей намного больше чем у &lt;a class="reference external" href="http://docs.notmyidea.org/alexis/pelican/"&gt;pelican&lt;/a&gt;? Возможности(дословно с сайта):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;это open-source&lt;/li&gt;
+&lt;li&gt;быстрый&lt;/li&gt;
+&lt;li&gt;нетребовательный к ресурсам&lt;/li&gt;
+&lt;li&gt;современный&lt;/li&gt;
+&lt;li&gt;категории и тэги&lt;/li&gt;
+&lt;li&gt;интеграция коментов, обратной связи и соц. сетей&lt;/li&gt;
+&lt;li&gt;rss, atom&lt;/li&gt;
+&lt;li&gt;подсветка кода&lt;/li&gt;
+&lt;li&gt;возможность создавать плагины&lt;/li&gt;
+&lt;li&gt;безопастность(не исполняемый на сервере)&lt;/li&gt;
+&lt;li&gt;offline(возможность запустить сервер локально)&lt;/li&gt;
+&lt;li&gt;основанный на файлах&lt;/li&gt;
+&lt;li&gt;возможность развертывания на Amazon S3 за дешево&lt;/li&gt;
+&lt;li&gt;GIT интеграция&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Список внушительный. Но если начать разбираться, то станет понятно что эти возможности есть и у &lt;a class="reference external" href="http://docs.notmyidea.org/alexis/pelican/"&gt;pelican&lt;/a&gt;,. И список этот высосан из пальца. Это все PR.&lt;/p&gt;
+&lt;p&gt;На практике оказалось, очень сложная и непонятная библиотека. С ней тяжело работать, так как перечитать исходник быстро не получится. Это означает что нужно время для старта, а его нет. С ходу при любых действия получаешь &lt;cite&gt;Traceback&lt;/cite&gt;. То ли версия обновилась, а документация нет, то ли еще какая то магия. Как бы то нибыло, идем дальше.&lt;/p&gt;
+&lt;p&gt;Третьим мне попалась библиотечка &lt;a class="reference external" href="https://github.com/mitsuhiko/rstblog"&gt;rstblog&lt;/a&gt;, написаная Армином Ронахером. Очень легкая и понятная. Уже становится интересно. Возможности:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;тэги&lt;/li&gt;
+&lt;li&gt;создание любых шаблонов&lt;/li&gt;
+&lt;li&gt;atom&lt;/li&gt;
+&lt;li&gt;подсветка кода на основе &lt;a class="reference external" href="http://pygments.org/"&gt;pygments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;offline(возможность запустить сервер локально)&lt;/li&gt;
+&lt;li&gt;основанный на файлах&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Здесь есть проблемка в том, что совершенно нет документации. Все остальное на высоте. Очень понятно и довольно просто. Исходный код и послужил документацией. Благо, его не много. Раз используем свои шаблоны, дизайн может быть любым. Значит можем подключать любые сервисы, то есть возможности библиотеки равные предыдущим. Звучит обнадеживающе.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h2&gt;Быстрый старт&lt;/h2&gt;
+&lt;div class="section" id="id11"&gt;
+&lt;h3&gt;Конфигурация&lt;/h3&gt;
+&lt;p&gt;Для безопастности и комфортной работы крайне желательно создать виртуальное окружение. Я буду использовать &lt;a class="reference external" href="http://pypi.python.org/pypi/virtualenv"&gt;virtualenv&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;$ mkdir blog &amp;amp;&amp;amp; cd blog
+$ virtualenv .env
+$ source ./.env/bin/activate
+$ pip install git+https://github.com/mitsuhiko/rstblog.git#egg=rstblog # устанавливаю
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Итак, папка для проекта готова. Конфигурация описывается в формате &lt;a class="reference external" href="http://ru.wikipedia.org/wiki/YAML"&gt;YAML&lt;/a&gt; в файле &lt;tt class="docutils literal"&gt;./config.yml&lt;/tt&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="l-Scalar-Plain"&gt;active_modules&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l-Scalar-Plain"&gt;pygments&lt;/span&gt;
+  &lt;span class="l-Scalar-Plain"&gt;tags&lt;/span&gt;
+  &lt;span class="l-Scalar-Plain"&gt;blog&lt;/span&gt;
+&lt;span class="l-Scalar-Plain"&gt;author&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;Oleg Lebedev&lt;/span&gt;
+&lt;span class="l-Scalar-Plain"&gt;canonical_url&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;http://blog.olebedev.ru/&lt;/span&gt;
+&lt;span class="l-Scalar-Plain"&gt;locale&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;ru&lt;/span&gt;
+&lt;span class="l-Scalar-Plain"&gt;modules&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l-Scalar-Plain"&gt;pygments&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l-Scalar-Plain"&gt;style&lt;/span&gt;&lt;span class="p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l-Scalar-Plain"&gt;tango&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Теперь создадим папку &lt;tt class="docutils literal"&gt;./_templates&lt;/tt&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;$ mkdir _templates
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Здесь будут все шаблоны, необходимые для блога. Создадим базовый шаблон &lt;tt class="docutils literal"&gt;./_templates/layout.html&lt;/tt&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    {% block htmlhead %}
+    &lt;span class="nt"&gt;&amp;lt;title&amp;gt;&lt;/span&gt;{% block title %}Блог{% endblock %} | Олег Лебедев.&lt;span class="nt"&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://fonts.googleapis.com/css?family=Vollkorn&amp;amp;subset=latin&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/static/style.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/feed.atom&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;alternate&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Новые Записи В Блоге&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/atom+xml&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    {%- for link in links %}
+    &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ link.rel }}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ link.href }}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ link.type }}&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    {%- endfor %}
+    {% endblock %}
+  &lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    {%block body%}
+    {%endblock%}
+  &lt;span class="nt"&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id12"&gt;
+&lt;h3&gt;Написание статьи&lt;/h3&gt;
+&lt;p&gt;Теперь можно создать статью блога. Для этого потребуется создать в несколько папок и файл, с подобной структурой: &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;./2011/10/9/hello-rst-world.rst&lt;/span&gt;&lt;/tt&gt;, что соответствует &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;./году/месяцу/дню/адресу-статьи&lt;/span&gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Файл &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;./2011/10/9/hello-rst-world.rst&lt;/span&gt;&lt;/tt&gt; может быть таким:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;public: yes
+tags: [блог, Python]
+summary: Быстрый старт.
+
+&lt;span class="gh"&gt;Генератор блога rstblog&lt;/span&gt;
+&lt;span class="gh"&gt;=======================&lt;/span&gt;
+
+Это первая заметка в блоге.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Обратите внимание на то что в начале файла используется &lt;a class="reference external" href="http://ru.wikipedia.org/wiki/YAML"&gt;YAML&lt;/a&gt; конфигурация.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id14"&gt;
+&lt;h3&gt;Запуск&lt;/h3&gt;
+&lt;p&gt;Для облегчения работы можно создать &lt;tt class="docutils literal"&gt;./Makefile&lt;/tt&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;all: clean build upload
+
+clean:
+        rm -rf _build
+
+build:
+        run-rstblog build
+
+serve:
+        run-rstblog serve
+
+upload:
+        scp -r _build/* www@olebedev.ru:~/olebedev.ru/public_html/_blog
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;После чего можно воспользоваться одной из созданных в &lt;tt class="docutils literal"&gt;Makefile&lt;/tt&gt; комманд:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;$ make serve # собираем и запускаем
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;В корневой дериктории появится папка &lt;tt class="docutils literal"&gt;./_build&lt;/tt&gt;, она содержит все статические файлы блога. Теперь можно посмотреть блог по адресу: &lt;a class="reference external" href="http://127.0.0.1:5000"&gt;127.0.0.1:5000&lt;/a&gt;. И увидеть следующее:&lt;/p&gt;
+&lt;img alt="Screen" src="http://static.olebedev.ru/static/files/2011/10/10/screen-1.png" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id16"&gt;
+&lt;h3&gt;Что дальше?&lt;/h3&gt;
+&lt;p&gt;Для того чтоб подключить в блог любые файлы(&lt;tt class="docutils literal"&gt;*.css&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;*.(png|jpg|gif)&lt;/span&gt;&lt;/tt&gt;, etc.), нужно создать папку &lt;tt class="docutils literal"&gt;./static&lt;/tt&gt; и поместить все необходимые файлы в нее. После сборки эта папка окажется и в папке &lt;tt class="docutils literal"&gt;./_build&lt;/tt&gt; с готовым блогом. И настроить ссылки в шаблоне или в самом тексте.&lt;/p&gt;
+&lt;p&gt;Создать отдельную страницу тоже очень просто. Нужно создать файл &lt;tt class="docutils literal"&gt;./about.rst&lt;/tt&gt;. после сборки будет доступен адрес &lt;tt class="docutils literal"&gt;/about/&lt;/tt&gt; либо &lt;tt class="docutils literal"&gt;/about/index.html&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;Это все что нужно знать для создания статического блога при помощи &lt;a class="reference external" href="https://github.com/mitsuhiko/rstblog"&gt;rstblog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+</feed>
+
