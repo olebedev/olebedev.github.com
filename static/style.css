@@ -32,6 +32,7 @@ div.footer                  { border-top: 1px dotted #ddd; padding-top: 9px;
                               text-align: center; }
 div.footer p                { margin: 0; }
 
+
 /* margins and stuff */
 p, div.line-block, ul, ol, pre,
     table                       { margin: 25px 0 25px 0; }
@@ -40,6 +41,7 @@ dd                              { margin: 16px 0 25px 40px; padding: 0; }
 ul ol, ol ul, ul ul, ol ol      { margin: 10px 0; padding: 0 0 0 40px; }
 li                              { padding: 0; }
 h1 + p.date                     { margin-top: -28px; font-style: italic; }
+
 
 /* code formatting.  no monospace because of webkit (bug?) */
 div.highlight   { overflow:auto; background: #ecf8d6; border-radius: 3px;
