@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+  
+    <title>Олег Лебедев</title>
+    <link href='http://fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <link href="/feed.atom" rel="alternate" title="Новые Записи В Блоге" type="application/atom+xml">
+    <link rel="stylesheet" href="/static/_pygments.css" type="text/css">
+  
+  </head>
+  <body>
+    <div class=container>
+      <div class=header>
+        
+      </div>
+      <div class=navigation>
+        <!-- <ul>
+          <li><a href="/about/">обратно</a>
+        </ul> -->
+      </div>
+      <div class=body>
+      <h1 class="title">Лебедев Олег</h1>
+
+      <div class="line-block">
+<div class="line">Дата рождения: 12.09.1980г.</div>
+<div class="line">Обрзование неоконченное высшее: УрГУ(философский).</div>
+</div>
+<div class="section" id="id2">
+<h2>опыт работы:</h2>
+<div class="section" id="id3">
+<h3>ООО &quot;Эквит&quot;</h3>
+<p>C апреля 2011 по настоящее время, разработчик.</p>
+<p>Основные обязанности - создать отпросник в стиле твиттер, с закрытыми вопросами разных типов(текстовые, с изображениями, слайдером, рейтингом). Для нахождения единомышленников. Полная i18n, включая сущности вопросов/ответов/тегов. Под платформу Google App Engine(python/tipfy). После 3х месяцев работы, пришлось полностью переписать систему с фреймворка tipfy на flask и отказаться от GAE в силу экономических причин и того что статус tipfy - deprecated. Как следствие возникла необходимость в архитектуре.</p>
+<p>Планируемая архитектура приложения:</p>
+<pre class="literal-block">
+- асинхронно реплицируемая база данных на отдельном кластере, обращение по внутренним IP
+- несколько application серверов, написанных на python, через wsgi шлюз,
+  сброс задач в очередь, никакой статики
+- сервер очередей задач, обрашение через внутренние IP
+- CDN для статического контента
+- большая часть рендеринга вынесена на клиента(браузер)
+- comet-сервер для real-time фич
+</pre>
+<p>Все поставленные задачи были реализованы, в альфа версии.
+После релиза альфа-версии 13 сентября, работа над проектом почти остановилась, так как из проекта ушел лидер и идеолог.</p>
+</div>
+<div class="section" id="self-employed">
+<h3>self-employed</h3>
+<p>C марта 2009 по аперль 2011.
+Разработка сайтов на основе фреймворка Django/(sqlite|MySQL), Code Igniter(PHP), pure PHP.
+Удалось разработать большое количество некрупных сайтов, отточить мастерство html/css/jquery dom manipulation/PhotoShop</p>
+</div>
+<div class="section" id="id4">
+<h3>**********************************************************************************</h3>
+<p>Навыки, технологии:</p>
+<pre class="literal-block">
+- python
+    pure, django, tornado, flask, celery, SQLAlchemy
+
+- javascript
+    pure, backbone.js, underscore.js, raphaël.js, jquery.js
+
+- Objective-C
+    Cocoa, Cocoa touch
+
+- noSQL
+    MongoDB, Redis
+
+- SQL
+    MySQL, PostgreSQL
+
+- SCM
+    mercurial, git
+
+- node.js
+    expressjs, Socket.IO, ejs, JinJS
+
+- AWS S3, EC2
+    настройка серверов с Debian, nginx, uwsgi
+
+- работа с API социальных сетей
+    Facebook OpenGraph API, Vkontakte API, etc
+
+- ZeroMQ, Queue
+
+- HAProxy
+
+- UNIX-like OS user/admin: Debian/Ubuntu, OS X
+
+- html5/css3, PhoneGap
+
+- webSockets, HTTP long-polling
+
+- photoshop
+</pre>
+</div>
+</div>
+
+      </div>
+      <div class=footer>
+      </div>
+    </div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17284959-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  //email replace
+  var s = document.getElementsByTagName('a');
+  for (var i = 0; i < s.length; i++)
+    { if (s[i].getAttribute("href") == "mailto:forspam@olebedev.ru")
+      {
+        s[i].setAttribute("href", ["mailto:mail", "olebedev.ru"].join('@')); // for spam crawlers
+        // console.log('change');
+      } 
+    }
+</script>
+  </body>
+</html>
