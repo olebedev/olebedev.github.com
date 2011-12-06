@@ -116,3 +116,17 @@ ul.tagcloud li  { margin: 0; padding: 0 10px; display: inline; }
 
 /* latex math */
 span.math img   { margin-bottom: -7px; }
+
+/* disqus */
+
+div#dsq-account-dropdown {
+font-family: 'Cuprum', 'Georgia', serif;
+font-weight: normal;
+color: #222;
+font-size: 1.17em;
+}
+
+div#dsq-account-dropdown a { color: #222; text-decoration: none; }
+div#dsq-subscribe li a { font-size: 75%; }
+div#dsq-subscribe      { display: none; }
+a.dsq-brlink         { display: none; }
