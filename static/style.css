@@ -127,6 +127,9 @@ font-size: 1.17em;
 }
 
 div#dsq-account-dropdown a { color: #222; text-decoration: none; }
-div#dsq-subscribe li a { font-size: 75%; }
-div#dsq-subscribe      { display: none; }
-a.dsq-brlink         { display: none; }
+div#dsq-subscribe li a     { font-size: 75%; }
+div#dsq-subscribe          { display: none; }
+a.dsq-brlink               { display: none; }
+div.dsq-comment-footer a   { font-weight: 700; font-size: 70%; }
+div.dsq-comment-footer a:hover   { color: #222!important; }
+div.dsq-comment-message    { margin: 0px; }
