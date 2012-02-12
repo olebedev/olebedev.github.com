@@ -3,34 +3,55 @@
   <head>
     <meta charset=utf-8>
   
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/static/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/ico/apple-touch-icon-114x114.png">
     <title>Генератор статического блога | Олег Лебедев, всего понемногу.</title>
-    <link href='http://fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/style.css" type="text/css">
     <link href="/feed.atom" rel="alternate" title="Новые Записи В Блоге" type="application/atom+xml">
+    <script src="/static/jquery.js"></script>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" type="text/css">
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="/static/fancybox/jquery.fancybox.css" />
+    <script type="text/javascript">$(function(){ $(".fancybox").fancybox();});</script>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <link rel="stylesheet" href="/static/_pygments.css" type="text/css">
+
   
   </head>
   <body>
-    <div class=container>
-      <div class=header>
-        <a href="/about/">Олег Лебедев</a>, всего понемногу.
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container" style="width: auto;">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/about/">Олег Лебедев, всего понемногу.</a>
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li><a href="/">блог</a>
+                <li><a href="/archive/">архив</a>
+                <li><a href="/tags/">тэги</a>
+                <li><a href="/about/">обо мне</a>
+              </ul>
+            </div><!-- /.nav-collapse -->
+          </div>
+        </div><!-- /navbar-inner -->
       </div>
-      <div class=navigation>
-        <ul>
-          <li><a href="/">блог</a>
-          <li><a href="/archive/">архив</a>
-          <li><a href="/tags/">тэги</a>
-          <li><a href="/about/">о</a>
-        </ul>
-      </div>
+
+
       <div class=body>
       
-  <h1 class="title">Генератор статического блога</h1>
-
+  <h1>Генератор статического блога</h1>
   
   <p class=date>написано в воскресенье, 9 октября 2011 г.
   
-
   <p>Это первая заметка в блоге. В ней я хочу поделиться опытом о том как можно генерировать полноценный блог из файлов <tt class="docutils literal">*.rst</tt> с соответствующей разметкой.</p>
 <div class="section" id="id2">
 <h2>Введение</h2>
@@ -170,8 +191,12 @@ upload:
 <div class="highlight"><pre>$ make serve # собираем и запускаем
 </pre></div>
 <p>В корневой дериктории появится папка <tt class="docutils literal">./_build</tt>, она содержит все статические файлы блога. Теперь можно посмотреть блог по адресу: <a class="reference external" href="http://127.0.0.1:5000">127.0.0.1:5000</a>. И увидеть следующее:</p>
-<img alt="Screen" src="http://static.olebedev.ru/static/files/2011/10/10/screen-1.png" style="width: 100%;" />
-</div>
+<ul class="thumbnails">
+<li class="span3">
+<a href="/static/img/screen-1.png" class="thumbnail fancybox">
+<img src="/static/img/screen-1.png" alt="">
+</a>
+</ul></div>
 <div class="section" id="id17">
 <h3>Что дальше?</h3>
 <p>Для того чтоб подключить в блог любые файлы(<tt class="docutils literal">*.css</tt>, <tt class="docutils literal"><span class="pre">*.(png|jpg|gif)</span></tt>, etc.), нужно создать папку <tt class="docutils literal">./static</tt> и поместить все необходимые файлы в нее. После сборки эта папка окажется и в папке <tt class="docutils literal">./_build</tt> с готовым блогом. И настроить ссылки в шаблоне или в самом тексте.</p>
@@ -179,7 +204,6 @@ upload:
 <p>Это все что нужно знать для создания статического блога при помощи <a class="reference external" href="https://github.com/mitsuhiko/rstblog">rstblog</a>.</p>
 </div>
 </div>
-
 
   
   <p class=tags>Эта запись отмечена тэгами
@@ -204,13 +228,30 @@ upload:
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
       </div>
-      <div class=footer>
-        <p>&copy; 2011 Олег Лебедев.
+      
+      <footer class="footer">
+        
+        <p class="pull-right">
+            <a href="#">на верх</a>
+        </p>
         <p>
-          Контакты: <a href="mailto:forspam@olebedev.ru">mail</a>,
-          <a href="http://twitter.com/olebedev">twitter</a>.
-        (<a href="http://feeds.feedburner.com/olebedev/dHWp" rel="alternate" title="Новые Записи В Блоге">feed</a>)
-      </div>
+        <ul class="quick-links">
+          <li>&copy; 2012 Олег Лебедев</li>
+          <li class="divider">&middot;</li>
+          <li>Контакты: <a href="mailto:forspam@olebedev.ru">mail</a></li>
+          <li class="divider">&middot;</li>
+          <li><a href="http://feeds.feedburner.com/olebedev/dHWp" rel="alternate" title="Новые Записи В Блоге">feed</a></li>
+          <li class="divider">&middot;</li>
+          <li class="follow-btn">
+            <a href="https://twitter.com/olebedev" class="twitter-follow-button" data-width="145px" data-link-color="#0069D6" data-show-count="true">Follow @olebedev</a>
+          </li>
+          <li class="divider">&middot;</li>
+          <li class="tweet-btn">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="Генератор статического блога " data-count="horizontal" data-via="olebedev">Tweet</a>
+          </li>
+        </ul>
+        </p>
+      </footer>
     </div>
 <script type="text/javascript">
   var _gaq = _gaq || [];

@@ -3,34 +3,55 @@
   <head>
     <meta charset=utf-8>
   
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/static/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/ico/apple-touch-icon-114x114.png">
     <title>Начало положено | Олег Лебедев, всего понемногу.</title>
-    <link href='http://fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/style.css" type="text/css">
     <link href="/feed.atom" rel="alternate" title="Новые Записи В Блоге" type="application/atom+xml">
+    <script src="/static/jquery.js"></script>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" type="text/css">
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="/static/fancybox/jquery.fancybox.css" />
+    <script type="text/javascript">$(function(){ $(".fancybox").fancybox();});</script>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <link rel="stylesheet" href="/static/_pygments.css" type="text/css">
+
   
   </head>
   <body>
-    <div class=container>
-      <div class=header>
-        <a href="/about/">Олег Лебедев</a>, всего понемногу.
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container" style="width: auto;">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/about/">Олег Лебедев, всего понемногу.</a>
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li><a href="/">блог</a>
+                <li><a href="/archive/">архив</a>
+                <li><a href="/tags/">тэги</a>
+                <li><a href="/about/">обо мне</a>
+              </ul>
+            </div><!-- /.nav-collapse -->
+          </div>
+        </div><!-- /navbar-inner -->
       </div>
-      <div class=navigation>
-        <ul>
-          <li><a href="/">блог</a>
-          <li><a href="/archive/">архив</a>
-          <li><a href="/tags/">тэги</a>
-          <li><a href="/about/">о</a>
-        </ul>
-      </div>
+
+
       <div class=body>
       
-  <h1 class="title">Начало положено</h1>
-
+  <h1>Начало положено</h1>
   
   <p class=date>написано в четверг, 1 декабря 2011 г.
   
-
   <p>Когда я узнал что в Омске проводятся <a class="reference external" href="http://rupy.ru/">RuPyRu</a> (теперь margincon), я обзавидовался омичам, потому как у нас здесь в Екатеринбурге такого небыло никогда, но очень хотелось. Причин для подобных встреч существует не мало. Хотя бы потому что подобных встреч нет в целом по России. Ну и все нормальные питонисты спят и видят, когда же можно будет обменяться опытом, заглянуть в глаза всем тем, кто выбрал python в качестве основного языка, узнать последние новости с передовой и неформально пообщаться с людьми, которые разделяют твои взгляды. При том, чтоб никуда не нужно было ехать =)</p>
 <p>И вчера это случилось! Вчера прошла первая встреча питонистов Екатеринбурга <a class="reference external" href="https://twitter.com/#!/search?q=%23ekbpy">#ekbpy</a>  в рамках &quot;Открытых семинаров&quot; по средам, которые организует компания <cite>it-people</cite>. Инициаторами встречи выступили <a class="reference external" href="http://twitter.com/apatrushev">Антон Патрушев</a>, <a class="reference external" href="http://twitter.com/ru_w31rd0">Илья Шабалин</a> и <a class="reference external" href="http://twitter.com/yurevich">Юрий Юревич</a>. Стоит отметить что <cite>it-people</cite> довольно часто устраивают очень хорошие и интересные семинары.</p>
 <p><a class="reference external" href="http://twitter.com/yurevich">Юрий Юревич</a> как всегда очень харизматично зачитал два доклада, первый в принципе про python и <tt class="docutils literal">import this</tt>, второй про python в недрах oDesk. Второй доклад был очень интересен, приятно то,  что он упоминал <a class="reference external" href="http://flask.pocoo.org/">Flask</a> как альтернативу <a class="reference external" href="https://www.djangoproject.com/">Django</a>. Наконец его уже стали воспринимать всерьез.</p>
@@ -46,7 +67,6 @@
 <p>Ближайшая подобная встреча, но пока в небольшом ЕКБ формате, планируется в январе 2012 года.
 Следите за <a class="reference external" href="https://twitter.com/#!/search?q=%23ekbpy">#ekbpy</a>, и приходите!</p>
 </div>
-
 
   
   <p class=tags>Эта запись отмечена тэгами
@@ -71,13 +91,30 @@
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
       </div>
-      <div class=footer>
-        <p>&copy; 2011 Олег Лебедев.
+      
+      <footer class="footer">
+        
+        <p class="pull-right">
+            <a href="#">на верх</a>
+        </p>
         <p>
-          Контакты: <a href="mailto:forspam@olebedev.ru">mail</a>,
-          <a href="http://twitter.com/olebedev">twitter</a>.
-        (<a href="http://feeds.feedburner.com/olebedev/dHWp" rel="alternate" title="Новые Записи В Блоге">feed</a>)
-      </div>
+        <ul class="quick-links">
+          <li>&copy; 2012 Олег Лебедев</li>
+          <li class="divider">&middot;</li>
+          <li>Контакты: <a href="mailto:forspam@olebedev.ru">mail</a></li>
+          <li class="divider">&middot;</li>
+          <li><a href="http://feeds.feedburner.com/olebedev/dHWp" rel="alternate" title="Новые Записи В Блоге">feed</a></li>
+          <li class="divider">&middot;</li>
+          <li class="follow-btn">
+            <a href="https://twitter.com/olebedev" class="twitter-follow-button" data-width="145px" data-link-color="#0069D6" data-show-count="true">Follow @olebedev</a>
+          </li>
+          <li class="divider">&middot;</li>
+          <li class="tweet-btn">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="Начало положено " data-count="horizontal" data-via="olebedev">Tweet</a>
+          </li>
+        </ul>
+        </p>
+      </footer>
     </div>
 <script type="text/javascript">
   var _gaq = _gaq || [];

@@ -179,8 +179,12 @@ upload:
 &lt;div class="highlight"&gt;&lt;pre&gt;$ make serve # собираем и запускаем
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;В корневой дериктории появится папка &lt;tt class="docutils literal"&gt;./_build&lt;/tt&gt;, она содержит все статические файлы блога. Теперь можно посмотреть блог по адресу: &lt;a class="reference external" href="http://127.0.0.1:5000"&gt;127.0.0.1:5000&lt;/a&gt;. И увидеть следующее:&lt;/p&gt;
-&lt;img alt="Screen" src="http://static.olebedev.ru/static/files/2011/10/10/screen-1.png" style="width: 100%;" /&gt;
-&lt;/div&gt;
+&lt;ul class="thumbnails"&gt;
+&lt;li class="span3"&gt;
+&lt;a href="/static/img/screen-1.png" class="thumbnail fancybox"&gt;
+&lt;img src="/static/img/screen-1.png" alt=""&gt;
+&lt;/a&gt;
+&lt;/ul&gt;&lt;/div&gt;
 &lt;div class="section" id="id17"&gt;
 &lt;h3&gt;Что дальше?&lt;/h3&gt;
 &lt;p&gt;Для того чтоб подключить в блог любые файлы(&lt;tt class="docutils literal"&gt;*.css&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;*.(png|jpg|gif)&lt;/span&gt;&lt;/tt&gt;, etc.), нужно создать папку &lt;tt class="docutils literal"&gt;./static&lt;/tt&gt; и поместить все необходимые файлы в нее. После сборки эта папка окажется и в папке &lt;tt class="docutils literal"&gt;./_build&lt;/tt&gt; с готовым блогом. И настроить ссылки в шаблоне или в самом тексте.&lt;/p&gt;
