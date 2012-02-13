@@ -21,6 +21,7 @@ code, tt        { display: inline-block;
                   white-space: pre;
                   white-space: nowrap;
                   word-break: break-all; }
+cite            { font-style:italic!important; }
 
 /* footer */
 footer          { font-size: 15px!important;
@@ -75,7 +76,7 @@ div.note blockquote                 { font-size: 85%;
 div.note                            { border: 1px solid #ddd; padding:0;
                                       border-radius:3px;
                                       margin: 10px 0; }
-blockquote                          { margin: 10px 0; padding:0px!important; }
+blockquote                          { margin: 10px 0; padding:0 0 0 10px!important; }
 blockquote dl.docutils              { margin: 0;}
 blockquote dl.docutils dt           { font-weight: bold; margin: 0 0 5px 0;}
 blockquote dl.docutils dd           { margin: 5px 0 0 25px;}
@@ -105,7 +106,7 @@ color: #222;
 font-size: 1.17em;
 }
 
-div#dsq-account-dropdown a { color: #222; text-decoration: none; }
+div#dsq-account-dropdown a { color: #222; text-decoration: none; font-family: 'Helvetica Neue', 'Helvetica', Alial, sans-serif }
 div#dsq-subscribe li a     { font-size: 75%; }
 div#dsq-subscribe          { display: none; }
 a.dsq-brlink               { display: none; }

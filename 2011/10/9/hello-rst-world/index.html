@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="/static/fancybox/jquery.fancybox.css" />
     <script type="text/javascript">$(function(){ $(".fancybox").fancybox();});</script>
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="/static/github-anywhere.js"></script>
+    <script>
+      GitHubAnywhere(function(G) {
+       G.buttons();
+      });
+    </script>
     <link rel="stylesheet" href="/static/_pygments.css" type="text/css">
 
   
@@ -138,8 +144,7 @@ $ pip install git+https://github.com/mitsuhiko/rstblog.git#egg=rstblog # уст�
   <span class="nt">&lt;head&gt;</span>
     {% block htmlhead %}
     <span class="nt">&lt;title&gt;</span>{% block title %}Блог{% endblock %} | Олег Лебедев.<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Vollkorn&amp;subset=latin&quot;</span>
-    <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Vollkorn&amp;subset=latin&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/static/style.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/feed.atom&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="na">title=</span><span class="s">&quot;Новые Записи В Блоге&quot;</span>
     <span class="na">type=</span><span class="s">&quot;application/atom+xml&quot;</span><span class="nt">&gt;</span>
@@ -242,13 +247,14 @@ upload:
           <li class="divider">&middot;</li>
           <li><a href="http://feeds.feedburner.com/olebedev/dHWp" rel="alternate" title="Новые Записи В Блоге">feed</a></li>
           <li class="divider">&middot;</li>
+          <li>
+            <a href='http://github.com/olebedev' class='github-anywhere github-anywhere-user' data-user='olebedev'>Follow olebedev on GitHub</a>
+          </li>
+          <li class="divider">&middot;</li>
           <li class="follow-btn">
             <a href="https://twitter.com/olebedev" class="twitter-follow-button" data-width="145px" data-link-color="#0069D6" data-show-count="true">Follow @olebedev</a>
           </li>
-          <li class="divider">&middot;</li>
-          <li class="tweet-btn">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="Генератор статического блога " data-count="horizontal" data-via="olebedev">Tweet</a>
-          </li>
+          
         </ul>
         </p>
       </footer>
