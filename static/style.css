@@ -100,6 +100,22 @@ ul.tagcloud li  { margin: 0; padding: 0 10px; display: inline; }
 /* latex math */
 span.math img   { margin-bottom: -7px; }
 
+/* index */
+.avatar {
+  height: 200px;
+  width:auto;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius:3px;
+  background-color: #dedede;
+  float:left;
+}
+
+.cont {
+  padding: 0 0 0 245px;
+}
+
+
 /* disqus */
 
 div#dsq-account-dropdown {
